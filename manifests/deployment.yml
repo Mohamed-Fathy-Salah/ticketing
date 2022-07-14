@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "ticktingdev-b0d8"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "ticktingdev-b0d8"
+  template:
+    metadata:
+      labels:
+        app: "ticktingdev-b0d8"
+    spec:
+      containers:
+        - name: "ticktingdev-b0d8"
+          image: "tickting.azurecr.io/ticktingdev"
+          ports:
+          - containerPort: 3000
