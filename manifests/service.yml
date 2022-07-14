@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "ticktingdev-b0d8"
+    labels:
+        app: "ticktingdev-b0d8"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 3000
+      targetPort: 3000
+      protocol: TCP
+      name: http
+    selector:
+        app: "ticktingdev-b0d8"
