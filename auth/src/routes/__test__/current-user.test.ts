@@ -18,5 +18,5 @@ it("responds with null if not authenticated", async () => {
   const res = await request(app).get("/api/users/currentuser").send();
 
   console.log(res.body);
-  expect(res.body.currentUser).toEqual(null);
+  expect(res.body.errors[0].message).toEqual("not authorized");
 });
