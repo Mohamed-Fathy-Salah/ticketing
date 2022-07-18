@@ -16,5 +16,5 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - run: cd auth && docker build -t mofasa101/auth . && docker push mofasa101/auth
-      - run: cd ../client && docker build -t mofasa101/client . && docker push mofasa101/client
+      - run: cd auth && docker build -t mofasa101/auth .
+      - run: docker push mofasa101/auth
