@@ -1,11 +1,11 @@
-name: deploy-auth
+name: deploy-tickets
 
 on:
   push:
     branches:
       - master
     paths:
-      - "auth/**"
+      - "tickets/**"
 
 jobs:
   build:
@@ -16,5 +16,5 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - run: cd auth && npm run test && docker build -t mofasa101/auth .
-      - run: docker push mofasa101/auth
+      - run: cd tickets && npm run test && docker build -t mofasa101/tickets .
+      - run: docker push mofasa101/tickets
