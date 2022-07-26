@@ -33,6 +33,7 @@ router.post(
       title: ticket.title, // take it from the value saved to the database bcs it might be changed
       price: ticket.price,
       userId: ticket.userId,
+      version: ticket.version,
     });
 
     res.status(201).send(ticket);

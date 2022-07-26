@@ -1,4 +1,4 @@
-import { Publisher, Subjects, TicketupdatedEvent } from "@mfstickets/common";
-export class TicketUpdatedPublisher extends Publisher<TicketupdatedEvent> {
+import { Publisher, Subjects, TicketUpdatedEvent } from "@mfstickets/common";
+export class TicketUpdatedPublisher extends Publisher<TicketUpdatedEvent> {
   subject: Subjects.TicketUpdated = Subjects.TicketUpdated;
 }
