@@ -15,7 +15,8 @@ import { natsWrapper } from "../nats-wrapper";
 
 const router = express.Router();
 
-const EXPIRATION_WINDOW_SECONDS = 15 * 60;
+//const EXPIRATION_WINDOW_SECONDS = 15 * 60;
+const EXPIRATION_WINDOW_SECONDS = 5;
 
 router.post(
   "/api/orders",
@@ -26,8 +27,6 @@ router.post(
       .isEmpty()
       .custom((input: string) => mongoose.Types.ObjectId.isValid(input))
       .withMessage("ticketid must be provided"),
-    body("title").not().isEmpty().withMessage("title must be supplied"),
-    body("price").isFloat({ gt: 0 }).withMessage("price must be > 0"),
   ],
   validateRequest,
   async (req: Request, res: Response) => {
