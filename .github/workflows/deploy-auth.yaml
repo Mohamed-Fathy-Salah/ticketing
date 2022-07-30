@@ -26,3 +26,4 @@ jobs:
            creds: ${{ secrets.AZURE_CREDENTIALS }}
            resource-group: 'blah'
            cluster-name: 'ticketing-dev'
+      - run: kubectl rollout restart deployment auth-depl
