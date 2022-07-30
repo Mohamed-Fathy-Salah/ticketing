@@ -6,6 +6,7 @@ const buildClient = ({ req }) => {
 
     return axios.create({
       baseURL:
+        //"put domain name here instead"
         "http://ingress-nginx-controller.ingress-nginx.svc.cluster.local",
       headers: req.headers,
     });

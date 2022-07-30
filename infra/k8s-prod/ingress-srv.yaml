@@ -8,6 +8,7 @@ metadata:
 spec:
   rules:
     - host: ticketing.dev
+      #- host: put your domain name here
       http:
         paths:
           - path: /api/payments/?(.*)
