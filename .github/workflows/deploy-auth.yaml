@@ -25,3 +25,4 @@ jobs:
         with:
            resource-group: blah
            cluster-name: ticketing-dev
+      - run: kubectl rollout restart deployment auth-depl
