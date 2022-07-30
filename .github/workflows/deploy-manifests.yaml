@@ -20,4 +20,4 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           resource-group: "blah"
           cluster-name: "ticketing-dev"
-      - run: kubectl apply -f infra/k8s
+      - run: kubectl apply -f infra/k8s && kubectl apply -f infra/k8s-prod
