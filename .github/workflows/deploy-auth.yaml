@@ -18,11 +18,12 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       - run: docker push mofasa101/auth
-      - uses: Azure/login@v1.4.3
+      - uses: Azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       - uses: azure/aks-set-context@v2
         with:
+           creds: ${{ secrets.AZURE_CREDENTIALS }}
            resource-group: 'blah'
            cluster-name: 'ticketing-dev'
       - run: kubectl rollout restart deployment auth-depl
