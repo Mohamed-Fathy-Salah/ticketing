@@ -21,9 +21,8 @@ jobs:
       - uses: Azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-      - uses: azure/aks-set-context@v2
+      - uses: azure/aks-set-context@v1
         with:
            creds: ${{ secrets.AZURE_CREDENTIALS }}
            resource-group: 'blah'
            cluster-name: 'ticketing-dev'
-      - run: kubectl rollout restart deployment auth-depl
